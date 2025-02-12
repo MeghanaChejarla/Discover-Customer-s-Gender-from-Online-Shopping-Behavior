@@ -1,0 +1,148 @@
+{% extends 'RUser/Header.html' %}
+{% block userblock %}
+
+
+<link rel="icon" href="images/icon.png" type="image/x-icon" />
+
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+
+
+
+		<style>
+			body {background-color:#000000;}
+			.container-fluid {padding:50px;}
+			.container{background-color:white;padding:50px;   }
+			#title{font-family: 'Fredoka One', cursive;
+}
+			.text-uppercase{
+			font-family: 'Righteous', cursive;
+
+			}
+			.tweettext{
+
+    border: 2px solid yellowgreen;
+    width: 904px;
+    height: 202px;
+    overflow: scroll;
+    background-color:;
+}
+		.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+.style4 {color: #FFFF00; font-weight: bold; }
+.style6 {
+	font-size: 24px;
+	color: #FFFF00;
+	font-weight: bold;
+}
+        </style>
+
+	<body>
+	<div class="container-fluid">
+		<div class="container">
+
+			<div class="row">
+				<div class="col-md-5">
+
+                   <form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+							<p class="text-uppercase pull-center style1">PREDICTION OF CUSTOMER GENDER!!! </p>
+                            <hr>
+
+                                {% csrf_token %}
+                                <table width="923" align="center">
+                                  <tr>
+                                    <td width="271" height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter Shopping Date and Timining </div></td>
+                                    <td width="205"><input type="text" name="date_time"></td>
+                                    <td width="252" bgcolor="#FF0000"><div align="center" class="style4">Enter event_name</div></td>
+                                    <td width="201"><input type="text" name="event_name"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Select gender</div></td>
+                                    <td><select name="gender">
+                                      <option>---Select---</option>
+                                      <option>Female</option>
+                                      <option>Male</option>
+                                    </select></td>
+                                    <td bgcolor="#FF0000"><div align="center" class="style4">Enter product_id</div></td>
+                                    <td><input type="text" name="product_id"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Enter category_id</div>
+                                    </div></td>
+                                    <td><input type="text" name="category_id"></td>
+                                    <td bgcolor="#FF0000"><div align="center" class="style4">Enter category_name</div></td>
+                                    <td><input type="text" name="category_name"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">
+                                      <div align="center">Enter brand</div>
+                                    </div></td>
+                                    <td><input type="text" name="brand"></td>
+                                    <td bgcolor="#FF0000"><div align="center" class="style4">Enter price (in Dollar) </div></td>
+                                    <td><input type="text" name="price"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4">Enter user_id</div></td>
+                                    <td><input type="text" name="user_id"></td>
+                                    <td bgcolor="#FF0000"><div align="center" class="style4">Enter session</div></td>
+                                    <td><input type="text" name="session"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4"><span class="style2">Enter category_1</span></div></td>
+                                    <td><input type="text" name="category_1"></td>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4"><span class="style2">Enter category_2</span></div></td>
+                                    <td><input type="text" name="category_2"></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="44" bgcolor="#FF0000"><div align="center" class="style4"><span class="style2">Enter category_3</span></div></td>
+                                    <td><input type="text" name="category_3"></td>
+                                    <td>&nbsp;</td>
+                                    <td><input name="submit" type="submit" class="style1" value="Predict"></td>
+                                  </tr>
+  <td><p>&nbsp; </p>
+          <p>&nbsp;</p></td>
+  </tr>
+                                </table>
+					 </fieldset>
+				  </form>
+
+
+ 					<form role="form" method="POST" >
+						{% csrf_token %}
+						<fieldset>
+
+                            <hr>
+                            <div>
+                              <table width="711" height="66" border="0" align="center" >
+                                    <tr><td width="484" bgcolor="#FF0000"><div align="center"><span class="style6">Discovering Customer's Gender  Type </span> <span class="style4">:: ---&gt; </span></div></td>
+
+
+
+                                      <td width="217" bgcolor="#FFFFFF" style="color:red; font-size:20px; font-family:fantasy" ><div align="center">{{objs}}</div></td></tr>
+                      </table>
+
+
+
+                            </div>
+
+
+
+
+						</fieldset>
+					</form>
+				</div>
+
+				<div class="col-md-2">
+					<!-------null------>
+				</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+    <tr>
